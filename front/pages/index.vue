@@ -15,12 +15,22 @@
         <i class="fa fa-moon-o" aria-hidden="true"></i>
       </div>
       <VueSlickCarousel :arrows="false" :dots="false" v-bind="settings">
-        <div><img src="assets/img/Coming soon finales.001.png" alt="" /></div>
-        <div><img src="assets/img/Coming soon finales.002.png" alt="" /></div>
-        <div><img src="assets/img/Coming soon finales.004.png" alt="" /></div>
-        <div><img src="assets/img/Coming soon finales.005.png" alt="" /></div>
-        <div><img src="assets/img/Coming soon finales.006.png" alt="" /></div>
-        <div><img src="assets/img/Coming soon finales.007.png" alt="" /></div>
+        <div v-if="viewModeClass == 'white-preview'">
+          <img src="assets/img/Coming soon finales.001.png" alt="" />
+        </div>
+        <div v-if="viewModeClass == 'dark-preview'">
+          <img  src="assets/img/Coming soon finales.002.png" alt="" />
+          </div>
+        <div v-if="viewModeClass == 'white-preview'">
+          <img src="assets/img/Coming soon finales.004.png" alt="" />
+          </div>
+        <div v-if="viewModeClass == 'dark-preview'" >
+          <img src="assets/img/Coming soon finales.005.png" alt="" /></div>
+        <div v-if="viewModeClass == 'white-preview'"><img src="assets/img/Coming soon finales.006.png" alt="" />
+        </div>
+        <div v-if="viewModeClass == 'dark-preview'">
+          <img src="assets/img/Coming soon finales.007.png" alt="" />
+          </div>
       </VueSlickCarousel>
     </div>
   </div>
