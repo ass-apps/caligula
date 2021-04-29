@@ -15,12 +15,6 @@ div.btn-container i{
   top: -9px;
 }
 
-label {
-  font-size: 13px;
-  color: #424242;
-  font-weight: 500;
-}
-
 .btn-color-mode-switch{
   display: inline-block;
   margin: 0px;
@@ -87,10 +81,11 @@ margin: 0;
 .dark-preview img{
 filter:grayscale(1);
 }
-.dark-preview .slide:nth-child(2){
+/*
+.dark-preview .slide{
 display: none!important;
 }
-
+*/
 .btn-color-mode-switch input[type="checkbox"]:checked + label.btn-color-mode-switch-inner{
   background: #151515;
   color: #fff;
