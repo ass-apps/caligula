@@ -1,10 +1,10 @@
 <template>
   <div>
-    <div class="white-preview">
+    <div :class="viewModeClass">
       <div class="btn-container">
         <i class="fa fa-sun-o" aria-hidden="true"></i>
         <label class="switch btn-color-mode-switch">
-          <input type="checkbox" name="color_mode" id="color_mode" value="1" />
+          <input type="checkbox" name="color_mode" id="color_mode" value="1" @change="changeMode()"/>
           <label
             for="color_mode"
             data-on="Dark"
@@ -14,7 +14,7 @@
         </label>
         <i class="fa fa-moon-o" aria-hidden="true"></i>
       </div>
-      <VueSlickCarousel :arrows="true" :dots="true" v-bind="settings">
+      <VueSlickCarousel :arrows="false" :dots="false" v-bind="settings">
         <div><img src="assets/img/Coming soon finales.001.png" alt="" /></div>
         <div><img src="assets/img/Coming soon finales.002.png" alt="" /></div>
         <div><img src="assets/img/Coming soon finales.004.png" alt="" /></div>
@@ -37,6 +37,7 @@ export default {
   components: { VueSlickCarousel },
   data() {
     return {
+      viewModeClass:"white-preview",
       settings: {
         slidesToShow: 1,
         speed: 1000,
@@ -47,6 +48,15 @@ export default {
         arrows: false,
       },
     };
+  },
+  methods: {
+    
+    changeMode(){
+
+      this.viewModeClass = this.viewModeClass == "white-preview" ? this.viewModeClass = "dark-preview" : this.defaultMode = "white-preview"
+
+    }
+    
   },
 };
 

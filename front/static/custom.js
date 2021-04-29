@@ -1,4 +1,4 @@
-$(document).ready(function() {
+/*$(document).ready(function() {
   $("#color_mode").on("change", function () {
       colorModePreview(this);
   })
@@ -13,4 +13,4 @@ function colorModePreview(ele) {
       $('body').addClass('white-preview');
       $('body').removeClass('dark-preview');
   }
-}
+}*/
