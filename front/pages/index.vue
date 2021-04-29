@@ -14,25 +14,10 @@
         </label>
         <i class="fa fa-moon-o" aria-hidden="true"></i>
       </div>
-      <VueSlickCarousel :arrows="false" :dots="false" v-bind="settings">
-        <div v-if="viewModeClass == 'dark-preview' || viewModeClass == 'white-preview'">
-          <img src="assets/img/Coming soon finales.001.png" alt="" />
+      <VueSlickCarousel :arrows="false" :dots="false" v-bind="settings" ref="carousel" @reInit="onReInitCarousel">
+        <div v-for="(image, index) in images" v-bind:key="index">
+          <img :src="image.image" alt="" />
         </div>
-        <div v-if="viewModeClass == 'white-preview'">
-          <img  src="assets/img/Coming soon finales.002.png" alt="" />
-          </div>
-        <div v-if="viewModeClass == 'dark-preview' || viewModeClass == 'white-preview'">
-          <img src="assets/img/Coming soon finales.004.png" alt="" />
-          </div>
-        <div v-if="viewModeClass == 'white-preview'">
-          <img src="assets/img/Coming soon finales.005.png" alt="" />
-        </div>
-        <div v-if="viewModeClass == 'dark-preview' || viewModeClass == 'white-preview'">
-          <img src="assets/img/Coming soon finales.006.png" alt="" />
-        </div>
-        <div v-if="viewModeClass == 'white-preview'">
-          <img src="assets/img/Coming soon finales.007.png" alt="" />
-          </div>
       </VueSlickCarousel>
     </div>
   </div>
@@ -50,6 +35,15 @@ export default {
   data() {
     return {
       viewModeClass:"white-preview",
+      initialImages:[
+        {"image": "assets/img/Coming soon finales.001.png", "darkModeOnly": false},
+        {"image": "assets/img/Coming soon finales.002.png", "darkModeOnly": true},
+        {"image": "assets/img/Coming soon finales.004.png", "darkModeOnly": false},
+        {"image": "assets/img/Coming soon finales.005.png", "darkModeOnly": true},
+        {"image": "assets/img/Coming soon finales.006.png", "darkModeOnly": false},
+        {"image": "assets/img/Coming soon finales.007.png", "darkModeOnly": true},
+      ],
+      images:[],
       settings: {
         slidesToShow: 1,
         speed: 1000,
@@ -66,10 +60,34 @@ export default {
     changeMode(){
 
       this.viewModeClass = this.viewModeClass == "white-preview" ? this.viewModeClass = "dark-preview" : this.defaultMode = "white-preview"
+      this.images = []
+      if(this.viewModeClass == "dark-preview"){
 
-    }
+        this.initialImages.forEach((data, index) => {
+
+          if(data.darkModeOnly == false){
+            this.images.push(data)
+          }
+
+        })
+
+      }else{
+        this.images = this.initialImages
+      }
+
+
+    },
+    onReInitCarousel() {
+      if(this.images.length != this.initialImages.length){
+        this.$refs.carousel.goTo(0)
+      }
+      //this.$refs.carousel.goTo(0)
+    },
     
   },
+  created(){
+    this.images = this.initialImages
+  }
 };
 
 </script> 
