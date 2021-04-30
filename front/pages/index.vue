@@ -36,12 +36,12 @@ export default {
     return {
       viewModeClass:"white-preview",
       initialImages:[
-        {"image": "assets/img/Coming soon finales.001.png", "darkModeOnly": false},
-        {"image": "assets/img/Coming soon finales.002.png", "darkModeOnly": true},
-        {"image": "assets/img/Coming soon finales.004.png", "darkModeOnly": false},
-        {"image": "assets/img/Coming soon finales.005.png", "darkModeOnly": true},
-        {"image": "assets/img/Coming soon finales.006.png", "darkModeOnly": false},
-        {"image": "assets/img/Coming soon finales.007.png", "darkModeOnly": true},
+        {"image": "assets/img/Coming_soon_finales.001.png", "darkModeOnly": false},
+        {"image": "assets/img/Coming_soon_finales.002.png", "darkModeOnly": true},
+        {"image": "assets/img/Coming_soon_finales.004.png", "darkModeOnly": false},
+        {"image": "assets/img/Coming_soon_finales.005.png", "darkModeOnly": true},
+        {"image": "assets/img/Coming_soon_finales.006.png", "darkModeOnly": false},
+        {"image": "assets/img/Coming_soon_finales.007.png", "darkModeOnly": true},
       ],
       images:[],
       settings: {
