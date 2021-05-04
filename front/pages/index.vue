@@ -14,7 +14,7 @@
         </label>
         <i class="fa fa-moon-o" aria-hidden="true"></i>
       </div>
-      <VueSlickCarousel :arrows="false" :dots="false" v-bind="settings" ref="carousel" @reInit="onReInitCarousel">
+      <VueSlickCarousel :arrows="false" :dots="true" v-bind="settings" ref="carousel" @reInit="onReInitCarousel" @afterChange="afterChange">
         <div v-for="(image, index) in images" v-bind:key="index">
           <img :src="image.image" alt="" />
         </div>
@@ -43,7 +43,9 @@ export default {
         {"image": "assets/img/Coming_soon_finales.006.png", "darkModeOnly": false},
         {"image": "assets/img/Coming_soon_finales.007.png", "darkModeOnly": true},
       ],
+      isChangeModeActive:false,
       images:[],
+      currentPage:0,
       settings: {
         slidesToShow: 1,
         speed: 1000,
@@ -59,6 +61,7 @@ export default {
     
     changeMode(){
 
+      this.isChangeModeActive = true
       this.viewModeClass = this.viewModeClass == "white-preview" ? this.viewModeClass = "dark-preview" : this.defaultMode = "white-preview"
       this.images = []
       if(this.viewModeClass == "dark-preview"){
@@ -78,11 +81,31 @@ export default {
 
     },
     onReInitCarousel() {
-      if(this.images.length != this.initialImages.length){
-        this.$refs.carousel.goTo(0)
+
+      if(this.isChangeModeActive == true){
+        this.isChangeModeActive = false
+
+        if(this.images.length != this.initialImages.length){
+          if(this.currentPage == 0 || this.currentPage == 1)
+            this.$refs.carousel.goTo(0)
+          
+          if(this.currentPage == 2 || this.currentPage == 3)
+            this.$refs.carousel.goTo(1)
+
+          if(this.currentPage == 4 || this.currentPage == 5)
+            this.$refs.carousel.goTo(3)
+        }
+
       }
+
+      
       //this.$refs.carousel.goTo(0)
     },
+    afterChange(page){
+
+      this.currentPage = page
+
+    }
     
   },
   created(){
