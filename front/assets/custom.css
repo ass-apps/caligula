@@ -193,7 +193,120 @@ right: -150px;
 *:focus {
 outline: none;
 }
+.logo{
+  position: absolute;
+  top: 47%;
+  left: 40%;
+  text-align: center;
+}
+.mini-widget{
+  position: absolute;
+    top: 50px;
+    display: flex;
+    left: 4%;
+    color: #fff;
+}
+.mini-widget p{
+  cursor: pointer;
+  padding-right: 12px;
+}
+.txt{
+  font-size: 23px;
+  padding-top: 15px;
+  text-align: center;
+  color: #fff;
+}
 
+@-webkit-keyframes float {
+  0% {
+
+    transform: translatey(0px);
+  }
+  50% {
+   
+    transform: translatey(-5px);
+  }
+  100% {
+   
+    transform: translatey(0px);
+  }
+}
+
+@keyframes float {
+  0% {
+
+    transform: translatey(0px);
+  }
+  50% {
+  
+    transform: translatey(-5px);
+  }
+  100% {
+
+    transform: translatey(0px);
+  }
+}
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flotant {
+
+  transform: translatey(0px);
+  -webkit-animation: float 6s ease-in-out infinite;
+          animation: float 6s ease-in-out infinite;
+}
+.flotant svg {
+  width: 100%;
+  height: auto;
+}
+
+.content {
+  width: 100%;
+  max-width: 600px;
+  padding: 20px 40px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.logo-color{
+  fill: #fff;
+}
+.logo_color_black{
+  fill: #000;
+}
+.slick-slide:nth-child(2) .logo-color,.slick-slide:nth-child(4) .logo-color,.slick-slide:nth-child(6) .logo-color,.slick-slide:nth-child(8) .logo-color,.slick-slide:nth-child(10) .logo-color,.slick-slide:nth-child(12) .logo-color,.slick-slide:nth-child(14) .logo-color,.slick-slide:nth-child(17) .logo-color,.slick-slide:nth-child(17) .logo-color{
+  fill: #000;
+}
+.slick-slide:nth-child(2) .txt,.slick-slide:nth-child(4) .txt,.slick-slide:nth-child(6) .txt,.slick-slide:nth-child(8) .txt,.slick-slide:nth-child(10) .txt,.slick-slide:nth-child(12) .txt,.slick-slide:nth-child(14) .txt,.slick-slide:nth-child(17) .txt,.slick-slide:nth-child(17) .txt{
+  color: #000;
+}
+.text-idioma{
+  position: absolute;
+  top: 5%;
+  left: 3%;
+}
+.text-idioma button{
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  color: #fff;
+  transition: .6s;
+}
+span{
+  color:#fff;
+}
+.text-idioma button:visited{
+  background: red;
+}
+.text-idioma button:hover{
+  font-weight: bold;
+}
 @media only screen and (max-width: 600px)  {
   img {
     display: block;
