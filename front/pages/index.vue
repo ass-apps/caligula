@@ -20,13 +20,7 @@
         </label>
         <i class="fa fa-moon-o" aria-hidden="true"></i>
       </div>
-      <VueSlickCarousel
-        :arrows="false"
-        :dots="false"
-        v-bind="settings"
-        ref="carousel"
-        @reInit="onReInitCarousel"
-      >
+      <VueSlickCarousel :arrows="false" :dots="true" v-bind="settings" ref="carousel" @reInit="onReInitCarousel" @afterChange="afterChange">
         <div v-for="(image, index) in images" v-bind:key="index">
           <img :src="image.image" alt="" />
             <div class="logo">
@@ -101,39 +95,18 @@ export default {
   components: { VueSlickCarousel },
   data() {
     return {
-      viewModeClass: "white-preview",
-      initialImages: [
-        { image: "assets/img/color bW.001.png", darkModeOnly: false },
-        { image: "assets/img/color bW.002.png", darkModeOnly: true },
-        { image: "assets/img/color bW.004.png", darkModeOnly: false },
-        { image: "assets/img/color bW.005.png", darkModeOnly: true },
-        { image: "assets/img/color bW.006.png", darkModeOnly: false },
-        { image: "assets/img/color bW.007.png", darkModeOnly: true },
-        { image: "assets/img/color bW.008.png", darkModeOnly: false },
-        { image: "assets/img/color bW.010.png", darkModeOnly: true },
-        { image: "assets/img/color bW.012.png", darkModeOnly: false },
-        { image: "assets/img/color bW.013.png", darkModeOnly: true },
-        { image: "assets/img/color bW.014.png", darkModeOnly: true },
-        { image: "assets/img/color bW.015.png", darkModeOnly: false },
-        { image: "assets/img/color bW.017.png", darkModeOnly: true },
-        { image: "assets/img/color bW.019.png", darkModeOnly: false },
-        { image: "assets/img/color bW.020.png", darkModeOnly: true },
-        { image: "assets/img/color bW.022.png", darkModeOnly: false },
-        { image: "assets/img/color bW.024.png", darkModeOnly: true },
-        { image: "assets/img/color bW.026.png", darkModeOnly: false },
-        { image: "assets/img/color bW.028.png", darkModeOnly: true },
-        { image: "assets/img/color bW.030.png", darkModeOnly: true },
-        { image: "assets/img/color bW.031.png", darkModeOnly: false },
-        { image: "assets/img/color bW.032.png", darkModeOnly: true },
-        { image: "assets/img/color bW.034.png", darkModeOnly: false },
-        { image: "assets/img/color bW.036.png", darkModeOnly: true },
-        { image: "assets/img/color bW.037.png", darkModeOnly: false },
-        { image: "assets/img/color bW.038.png", darkModeOnly: true },
-        { image: "assets/img/color bW.040.png", darkModeOnly: false },
-        { image: "assets/img/color bW.041.png", darkModeOnly: true },
-        { image: "assets/img/color bW.0044.png", darkModeOnly: true },
+      viewModeClass:"white-preview",
+      initialImages:[
+        {"image": "assets/img/Coming_soon_finales.001.png", "darkModeOnly": false},
+        {"image": "assets/img/Coming_soon_finales.002.png", "darkModeOnly": true},
+        {"image": "assets/img/Coming_soon_finales.004.png", "darkModeOnly": false},
+        {"image": "assets/img/Coming_soon_finales.005.png", "darkModeOnly": true},
+        {"image": "assets/img/Coming_soon_finales.006.png", "darkModeOnly": false},
+        {"image": "assets/img/Coming_soon_finales.007.png", "darkModeOnly": true},
       ],
-      images: [],
+      isChangeModeActive:false,
+      images:[],
+      currentPage:0,
       settings: {
         slidesToShow: 1,
         autoplay: true,
@@ -148,13 +121,14 @@ export default {
     };
   },
   methods: {
-    changeMode() {
-      this.viewModeClass =
-        this.viewModeClass == "white-preview"
-          ? (this.viewModeClass = "dark-preview")
-          : (this.defaultMode = "white-preview");
-      this.images = [];
-      if (this.viewModeClass == "dark-preview") {
+    
+    changeMode(){
+
+      this.isChangeModeActive = true
+      this.viewModeClass = this.viewModeClass == "white-preview" ? this.viewModeClass = "dark-preview" : this.defaultMode = "white-preview"
+      this.images = []
+      if(this.viewModeClass == "dark-preview"){
+
         this.initialImages.forEach((data, index) => {
           if (data.darkModeOnly == false) {
             this.images.push(data);
@@ -165,17 +139,32 @@ export default {
       }
     },
     onReInitCarousel() {
-      if (this.images.length != this.initialImages.length) {
-        this.$refs.carousel.goTo(0);
+
+      if(this.isChangeModeActive == true){
+        this.isChangeModeActive = false
+
+        if(this.images.length != this.initialImages.length){
+          if(this.currentPage == 0 || this.currentPage == 1)
+            this.$refs.carousel.goTo(0)
+          
+          if(this.currentPage == 2 || this.currentPage == 3)
+            this.$refs.carousel.goTo(1)
+
+          if(this.currentPage == 4 || this.currentPage == 5)
+            this.$refs.carousel.goTo(3)
+        }
+
       }
+
+      
       //this.$refs.carousel.goTo(0)
     },
-    changeLang(lang) {
-      this.lang = lang;
-    },
-  },
-  created() {
-    this.images = this.initialImages;
+    afterChange(page){
+
+      this.currentPage = page
+
+    }
+    
   },
 };
 </script> 
