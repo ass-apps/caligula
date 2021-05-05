@@ -25,7 +25,7 @@
           <img :src="image.image" alt="" />
             <div class="logo">
               <div class="flotant">
-                <svg class="logo-color"
+                <svg    class="logo-color"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 712.64 179.37">
               
