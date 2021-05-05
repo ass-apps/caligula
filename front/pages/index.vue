@@ -97,12 +97,35 @@ export default {
     return {
       viewModeClass:"white-preview",
       initialImages:[
-        {"image": "assets/img/Coming_soon_finales.001.png", "darkModeOnly": false},
-        {"image": "assets/img/Coming_soon_finales.002.png", "darkModeOnly": true},
-        {"image": "assets/img/Coming_soon_finales.004.png", "darkModeOnly": false},
-        {"image": "assets/img/Coming_soon_finales.005.png", "darkModeOnly": true},
-        {"image": "assets/img/Coming_soon_finales.006.png", "darkModeOnly": false},
-        {"image": "assets/img/Coming_soon_finales.007.png", "darkModeOnly": true},
+          { image: "assets/img/color bW.001.png", darkModeOnly: false },
+        { image: "assets/img/color bW.002.png", darkModeOnly: true },
+        { image: "assets/img/color bW.004.png", darkModeOnly: false },
+        { image: "assets/img/color bW.005.png", darkModeOnly: true },
+        { image: "assets/img/color bW.006.png", darkModeOnly: false },
+        { image: "assets/img/color bW.007.png", darkModeOnly: true },
+        { image: "assets/img/color bW.008.png", darkModeOnly: false },
+        { image: "assets/img/color bW.010.png", darkModeOnly: true },
+        { image: "assets/img/color bW.012.png", darkModeOnly: false },
+        { image: "assets/img/color bW.013.png", darkModeOnly: true },
+        { image: "assets/img/color bW.014.png", darkModeOnly: true },
+        { image: "assets/img/color bW.015.png", darkModeOnly: false },
+        { image: "assets/img/color bW.017.png", darkModeOnly: true },
+        { image: "assets/img/color bW.019.png", darkModeOnly: false },
+        { image: "assets/img/color bW.020.png", darkModeOnly: true },
+        { image: "assets/img/color bW.022.png", darkModeOnly: false },
+        { image: "assets/img/color bW.024.png", darkModeOnly: true },
+        { image: "assets/img/color bW.026.png", darkModeOnly: false },
+        { image: "assets/img/color bW.028.png", darkModeOnly: true },
+        { image: "assets/img/color bW.030.png", darkModeOnly: true },
+        { image: "assets/img/color bW.031.png", darkModeOnly: false },
+        { image: "assets/img/color bW.032.png", darkModeOnly: true },
+        { image: "assets/img/color bW.034.png", darkModeOnly: false },
+        { image: "assets/img/color bW.036.png", darkModeOnly: true },
+        { image: "assets/img/color bW.037.png", darkModeOnly: false },
+        { image: "assets/img/color bW.038.png", darkModeOnly: true },
+        { image: "assets/img/color bW.040.png", darkModeOnly: false },
+        { image: "assets/img/color bW.041.png", darkModeOnly: true },
+   
       ],
       isChangeModeActive:false,
       images:[],
@@ -163,6 +186,9 @@ export default {
 
       this.currentPage = page
 
+    },
+      changeLang(lang) {
+      this.lang = lang;
     }
     
   },

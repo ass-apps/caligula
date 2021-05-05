@@ -298,16 +298,37 @@ outline: none;
   color: #fff;
   transition: .6s;
 }
+
 span{
   color:#fff;
 }
-.text-idioma button:visited{
-  background: red;
-}
+
 .text-idioma button:hover{
   font-weight: bold;
 }
 @media only screen and (max-width: 600px)  {
+  .logo {
+  
+    left: 6%;
+ 
+}
+.flotant svg {
+  width: 65%;
+
+}
+.txt {
+  font-size: 17px;
+
+}
+.text-idioma {
+  position: absolute;
+  top: auto;
+  left: 35%;
+  bottom: 15px;
+}
+.slick-dots li button{
+  display: none;
+}
   img {
     display: block;
     width: 100%;
