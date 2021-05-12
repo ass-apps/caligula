@@ -132,7 +132,7 @@ export default {
       currentPage:0,
       settings: {
         slidesToShow: 1,
-        autoplay: false,
+        autoplay: true,
         fade: true,
         cssEase: "linear",
         arrows: false,
