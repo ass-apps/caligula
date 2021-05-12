@@ -132,11 +132,11 @@ export default {
       currentPage:0,
       settings: {
         slidesToShow: 1,
-        autoplay: true,
+        autoplay: false,
         fade: true,
         cssEase: "linear",
         arrows: false,
-        autoplaySpeed: 1000,
+        autoplaySpeed: 2000,
         pauseOnHover: false,
         pauseOnFocus: false,
       },

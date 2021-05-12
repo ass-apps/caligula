@@ -5,11 +5,12 @@ body{
 div.btn-container{
   display: table-cell;
   vertical-align: middle;
-  text-align: center;
+  text-align: right;
   position: absolute;
   z-index: 9;
-  right: 3%;
   top: 30px;
+  width: 100%;
+  right: 30px;
 }
 
 div.btn-container i{
@@ -195,9 +196,17 @@ outline: none;
 }
 .logo{
   position: absolute;
-  top: 47%;
-  left: 40%;
+  top: 0;
   text-align: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.slick-dots{
+  display: none!important;
 }
 .mini-widget{
   position: absolute;
@@ -262,7 +271,7 @@ outline: none;
           animation: float 6s ease-in-out infinite;
 }
 .flotant svg {
-  width: 100%;
+  width: 350px;
   height: auto;
 }
 
@@ -307,18 +316,13 @@ span{
   font-weight: bold;
 }
 @media only screen and (max-width: 600px)  {
-  .logo {
-  
-    left: 6%;
- 
-}
-.flotant svg {
-  width: 65%;
 
+  .flotant svg {
+    width: 230px;
+   
 }
 .txt {
   font-size: 17px;
-
 }
 .text-idioma {
   position: absolute;
@@ -336,7 +340,7 @@ span{
     object-fit: cover;
 }
 div.btn-container {
-  right: 20%;
-
+  text-align: center;
+  right: 0;
 }
 }
