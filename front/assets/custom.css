@@ -295,10 +295,24 @@ outline: none;
 .slick-slide:nth-child(2) .txt,.slick-slide:nth-child(4) .txt,.slick-slide:nth-child(6) .txt,.slick-slide:nth-child(8) .txt,.slick-slide:nth-child(10) .txt,.slick-slide:nth-child(12) .txt,.slick-slide:nth-child(14) .txt,.slick-slide:nth-child(17) .txt,.slick-slide:nth-child(17) .txt{
   color: #000;
 }
+
+
+.dark-preview .slick-slide:nth-child(2) .logo-color,.dark-preview .slick-slide:nth-child(4) .logo-color, .dark-preview .slick-slide:nth-child(6) .logo-color,.dark-preview .slick-slide:nth-child(8) .logo-color,.dark-preview .slick-slide:nth-child(10) .logo-color,.dark-preview .slick-slide:nth-child(12) .logo-color,.dark-preview .slick-slide:nth-child(14) .logo-color,.dark-preview .slick-slide:nth-child(17) .logo-color,.dark-preview .slick-slide:nth-child(17) .logo-color{
+  fill: #fff;
+}
+.dark-preview .slick-slide:nth-child(2) .txt,.dark-preview  .slick-slide:nth-child(4) .txt,.dark-preview  .slick-slide:nth-child(6) .txt,.dark-preview  .slick-slide:nth-child(8) .txt, .dark-preview .slick-slide:nth-child(10) .txt, .dark-preview .slick-slide:nth-child(12) .txt,.slick-slide:nth-child(14) .txt,.dark-preview  .slick-slide:nth-child(17) .txt,.dark-preview .slick-slide:nth-child(17) .txt{
+  color: #fff;
+}
+
+
+
+
+
 .text-idioma{
   position: absolute;
   top: 5%;
   left: 3%;
+  z-index: 9999;
 }
 .text-idioma button{
   background: transparent;
