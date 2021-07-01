@@ -38,16 +38,16 @@ class PurchaseSeeder extends Seeder
             $size->gender = "masculino";
             $size->save();
 
-            $product = new Product;
-            $product->name = "Producto 1";
-            $product->mainImage = "https://cdn.cnetcontent.com/3e/52/3e529cf8-161a-43a0-b154-30d5636f70ae.jpg";
-            $product->description = "<h1>dad</h1>";
-            $product->brand_id = $brand->id;
-            $product->category_id = $category->id;
-            $product->save();
+            $productModel = new Product;
+            $productModel->name = "Producto 1";
+            $productModel->mainImage = "https://cdn.cnetcontent.com/3e/52/3e529cf8-161a-43a0-b154-30d5636f70ae.jpg";
+            $productModel->description = "<h1>dad</h1>";
+            $productModel->brand_id = $brand->id;
+            $productModel->category_id = $category->id;
+            $productModel->save();
 
             $variation = new Variation;
-            $variation->product_id = $product->id;
+            $variation->product_id = $productModel->id;
             $variation->size_id = $size->id;
             $variation->price = 120000;
             $variation->amount = 5;
