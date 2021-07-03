@@ -10,7 +10,7 @@ class Purchase extends Model
     use HasFactory;
 
     function purchasedVariations(){
-        return $this->hasMany(purchasedVariation::class);
+        return $this->hasMany(PurchasedVariation::class);
     }
 
     function user(){
